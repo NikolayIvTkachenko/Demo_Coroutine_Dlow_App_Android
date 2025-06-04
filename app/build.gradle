@@ -83,9 +83,9 @@ dependencies {
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.8.1")
     implementation ("com.squareup.retrofit2:converter-moshi:2.8.1")
+    implementation ("com.squareup.retrofit2:converter-gson:2.8.1")
 
-//    //Jetpack
-//    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0-alpha01'
-//    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01'
-//    kapt 'androidx.lifecycle:lifecycle-compiler:2.2.0-alpha01'
+    //implementation ("com.google.code.gson:gson:2.8.5")
+    implementation (libs.code.gson)
+
 }
