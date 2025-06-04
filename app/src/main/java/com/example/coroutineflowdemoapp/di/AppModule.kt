@@ -18,7 +18,7 @@ class AppModule {
     @Singleton
     fun provideDemoTasksApi(): DemoTasksApi {
         return Retrofit.Builder()
-            .baseUrl(ConstantApp.base_url)
+            .baseUrl(ConstantApp.base_url + "/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create()
