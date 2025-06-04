@@ -6,26 +6,26 @@ import retrofit2.http.Query
 
 interface DemoTasksApi {
 
-    @GET("tasks/ids")
+    @GET("/tasks/ids")
     suspend fun getListIds(): List<String>
 
-    @GET("tasks/list")
+    @GET("/tasks/list")
     suspend fun getListTask(): List<TaskResponse>
 
-    @GET("tasks/{id}")
+    @GET("/tasks/{id}")
     suspend fun getTask(
         @Query("id") id: String
     ): TaskResponse
 
     //Pagination
-    @GET("tasks/page/ids")
+    @GET("/tasks/page/ids")
     suspend fun getPageListIds(
         @Query("offset") offset: Int,
         @Query("limit") limit: Int,
     ): List<String>
 
 
-    @GET("tasks/page/list")
+    @GET("/tasks/page/list")
     suspend fun getPageListTasks(
         @Query("offset") offset: Int,
         @Query("limit") limit: Int,

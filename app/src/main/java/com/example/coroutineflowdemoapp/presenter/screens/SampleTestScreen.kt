@@ -63,6 +63,63 @@ fun SampleTestScreen(
                     )
                 }
             }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 20.dp, end = 20.dp, bottom = 20.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+
+            ) {
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest01()
+                    }
+                ) {
+                    Text(
+                        text = "Test 01",
+                        fontSize = 12.sp
+                    )
+                }
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest02()
+                    }
+                ) {
+                    Text(
+                        text = "Test 02",
+                        fontSize = 12.sp
+                    )
+                }
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 20.dp, end = 20.dp, bottom = 20.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+
+            ) {
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest03()
+                    }
+                ) {
+                    Text(
+                        text = "Test 03",
+                        fontSize = 12.sp
+                    )
+                }
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest04()
+                    }
+                ) {
+                    Text(
+                        text = "Test 04",
+                        fontSize = 12.sp
+                    )
+                }
+            }
 
         }
     }
