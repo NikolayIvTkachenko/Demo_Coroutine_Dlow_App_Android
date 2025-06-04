@@ -86,8 +86,5 @@ fun GreetingPreview(
 //    //val demoListIdsViewModel: DemoListIdsViewModel by viewModels()
 //    //val demoTasksViewModel: DemoTasksViewModel by viewModels()
 
-//java.net.UnknownServiceException: CLEARTEXT communication to 192.168.56.1 not permitted by network security policy
-//android:usesCleartextTraffic="true"
-//.ConnectException: Failed to connect to /192.168.56.1:9010
 //http://localhost:9010/tasks/ids //192.168.0.12
 //http://192.168.0.12:9010/tasks/ids
