@@ -1,14 +1,17 @@
 package com.example.coroutineflowdemoapp.presenter.view_model
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.coroutineflowdemoapp.ConstantApp
 import com.example.coroutineflowdemoapp.domain.repository.DemoTasksRawRepository
 import com.example.coroutineflowdemoapp.domain.repository.DemoTasksRepository
 import com.example.coroutineflowdemoapp.domain.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -79,6 +82,32 @@ class DemoListIdsViewModel @Inject constructor(
 
     //Тестирование работы корутин, последовательная работа
     fun getTest01() {
+        Log.d(ConstantApp.log_key_tni_help, "DemoListIdsViewModel getTest01() ")
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                val startTime = System.currentTimeMillis()
+                println()
+                val ids = repositoryRaw.getListIds()
+                Log.d(ConstantApp.log_key_tni_help, "ids = $ids")
+                ids.map { id ->
+                    try {
+                        val item = repositoryRaw.getTask(id)
+                        Log.d(ConstantApp.log_key_tni_help, " item = $item ")
+                    } catch (e: Exception) {
+                        Log.d(ConstantApp.log_key_tni_help, "item error = ${e.message}")
+                    }
+
+                }
+                val endTime = System.currentTimeMillis()
+                val timeWork = endTime - startTime
+                Log.d(ConstantApp.log_key_tni_help, "startTime = $startTime")
+                Log.d(ConstantApp.log_key_tni_help, "endTime = $endTime")
+                Log.d(ConstantApp.log_key_tni_help, "timeWork = $timeWork")
+            }
+        } catch (e: Exception) {
+            Log.d(ConstantApp.log_key_tni_help, "general error = ${e.message}")
+        }
+
 
     }
 
