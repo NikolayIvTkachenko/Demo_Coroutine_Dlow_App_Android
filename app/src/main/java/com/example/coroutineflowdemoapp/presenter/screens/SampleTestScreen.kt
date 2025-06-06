@@ -90,6 +90,16 @@ fun SampleTestScreen(
                         fontSize = 12.sp
                     )
                 }
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest03()
+                    }
+                ) {
+                    Text(
+                        text = "Test 03",
+                        fontSize = 12.sp
+                    )
+                }
             }
 
             Row(
@@ -101,17 +111,27 @@ fun SampleTestScreen(
             ) {
                 Button(
                     onClick = {
-                        listIdsViewModel.getTest03()
+                        listIdsViewModel.getTest04()
                     }
                 ) {
                     Text(
-                        text = "Test 03",
+                        text = "Test 04",
                         fontSize = 12.sp
                     )
                 }
                 Button(
                     onClick = {
-                        listIdsViewModel.getTest04()
+                        listIdsViewModel.getTest05()
+                    }
+                ) {
+                    Text(
+                        text = "Test 05",
+                        fontSize = 12.sp
+                    )
+                }
+                Button(
+                    onClick = {
+                        listIdsViewModel.getTest06()
                     }
                 ) {
                     Text(
